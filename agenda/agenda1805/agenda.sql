@@ -23,6 +23,23 @@ use agendajefferson;
 -- not null -> Obrigatorio o preenchimento
 -- ponto(.) é valor, virgula (,) é comando
 
+
+-- 23/05/2022
+-- unique (sem repetição de caractere)
+-- para inserir uma senha com criptografia usamos md5 ()
+-- acessando o sistema pela tela de login 
+-- and (função lógica onde todas as condições devem ser verdadeiras)
+select * from usuarios where login='admin' and senha='123456';
+-- definir a hora do cadastro (data e hora automatica)
+(coluna) timestamp default current_timestamp,
+-- tipo de dados relacionado a data (yyyy/mm/dd)
+(coluna) date
+--
+
+
+insert into usuarios (usuario,login,senha,perfil)
+values ('administrador','admin',md5('admin'),'admin');
+
 create table contatos (
 	id int primary key auto_increment,
     nome varchar(255) not null,
@@ -121,3 +138,5 @@ update contatos set nome='Robson da Silva',fone='92222-1222',email='vaamonde@hot
 -- delete from (nome da tabela) where (localização: id ou cod)
 
 delete from contatos where id=9;
+
+
