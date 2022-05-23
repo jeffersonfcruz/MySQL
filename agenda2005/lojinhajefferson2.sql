@@ -28,5 +28,7 @@ select * from produtos;
 select produto from produtos order by produto;
 update produtos set produto='USE A CABEÇA! PYTHON — 2ª EDIÇÃO' where codigo=1;
 update produtos set valor=60.90 where codigo=5;
-delete from produtos where codigo=6
+delete from produtos where codigo=6;
 
+insert into produtos (produto,quantidade,valor)
+values ('UM DE NÓS É O PRÓXIMO',90,54.90);
