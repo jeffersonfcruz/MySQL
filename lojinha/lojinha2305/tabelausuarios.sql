@@ -3,6 +3,7 @@
     @author Jefferson Cruz
     @version 1.1
 */
+use lojinhajefferson2;
 create table usuarios (
 	idusu int primary key auto_increment,
     usuario varchar(255) not null,

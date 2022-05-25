@@ -120,6 +120,36 @@ select nome,fone,email from contatos order by nome desc;
 select nome as Contato, fone as Telefone, email as Email
 from contatos order by nome;
 
+-- soma no banco de dados
+select sum(estoque * custo) as total from produtos;
+
+-- relatorio de reposição de estoque 1
+select * from produtos where estoque < estoquemin;
+
+-- relatorio de reposição de estoque 2 
+select codigo as código, 
+produto, 
+date_format(dataval,'%d/%m/%Y') as data_validade, 
+estoque,
+estoquemin as estoque_minimo 
+from produtos where estoque < estoquemin;
+
+-- relatorio de validade de produtos 1
+select codigo as código,
+produto,
+date_format(dataval,'%d/%m/%Y') as data_validade
+from produtos;
+
+-- relatorio de validade de produtos 2
+-- datediff() calcular a diferença em dias
+-- curdate() obtém a data atual 
+-- date_format(coluna data, formato) formato de data ('%/%/%') (d,m,Y)
+select codigo as código,
+produto,
+date_format(dataval,'%d/%m/%Y') as data_validade,
+datediff(dataval,curdate()) as dias_restantes
+from produtos;
+
 /******************************************************************/
 
 -- CRUD UPDATE

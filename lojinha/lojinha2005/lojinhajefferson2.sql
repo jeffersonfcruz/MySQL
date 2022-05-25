@@ -32,3 +32,20 @@ delete from produtos where codigo=6;
 
 insert into produtos (produto,quantidade,valor)
 values ('UM DE NÓS É O PRÓXIMO',90,54.90);
+
+create table clientes (
+	idcli int primary key auto_increment,
+    nome varchar(255) not null,
+    fone varchar(255) not null,
+    cpf varchar(255) unique,
+    email varchar(255),
+    marketing varchar(255) not null,
+    cep varchar(255),
+    endereco varchar(255),
+    numero varchar(255),
+    complemento varchar(255),
+    bairro varchar(255),
+    cidade varchar(255),
+    uf char(2)
+);
+describe clientes;
